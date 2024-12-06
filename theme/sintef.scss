@@ -1,0 +1,167 @@
+/* @theme sintef */
+
+@import-theme 'default';
+
+
+$sintef-blue: #003a62;
+$sintef-dark-green: #004427;
+$sintef-green: #13b374;
+$sintef-light-green: #c7f2da;
+$sintef-purple: #74004d;
+$sintef-red: #b83a35;
+$sintef-yellow: #c29613;
+
+$logo-size: 140px;
+$title-gap-base: 500px;
+$slide-title-offset: 20px;
+
+
+@mixin backdrop($color) {
+    background: linear-gradient(110deg, $color 49.95%, transparent 50.05%), url("theme/background.jpg");
+}
+
+@mixin chapter-color($color) {
+    color: $color;
+    h1 { color: $color; }
+    h2 { color: $color; }
+}
+
+@mixin logo-common() {
+    background-size: $logo-size $logo-size;
+}
+
+@mixin logo-pos() {
+    background: url("theme/sintef-logo-positive.svg") top left no-repeat;
+    @include logo-common();
+}
+
+@mixin logo-neg() {
+    background: url("theme/sintef-logo-negative.svg") top left no-repeat;
+    @include logo-common();
+}
+
+
+@font-face {
+    font-family: calibri-bold;
+    src: url("theme/calibri-bold.ttf");
+}
+
+@font-face {
+    font-family: calibri-regular;
+    src: url("theme/calibri-regular.ttf");
+}
+
+@font-face {
+    font-family: iosevka-semibold;
+    src: url("theme/iosevka-ss09-extendedsemibold.ttf");
+}
+
+section {
+    justify-content: start;
+    color: $sintef-blue;
+
+    &.title, &.chapter {
+        padding-top: $title-gap-base + 20px;
+        color: black;
+
+        h1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: $title-gap-base - 50px;
+            color: $sintef-blue;
+        }
+
+        h2 {
+            position: absolute;
+            top: $title-gap-base - 70px;
+            font-family: calibri-regular;
+            font-weight: 100;
+            font-size: 37px;
+            color: $sintef-blue;
+        }
+    }
+
+    &.title {
+        @include backdrop($color: white);
+    }
+
+    &.chapter.blue {
+        @include backdrop($color: $sintef-blue);
+        @include chapter-color($color: white);
+        h1::before { @include logo-neg(); }
+    }
+
+    &.chapter.dark-green {
+        @include backdrop($color: $sintef-dark-green);
+        @include chapter-color($color: white);
+        h1::before { @include logo-neg(); }
+    }
+
+    &.chapter.green {
+        @include backdrop($color: $sintef-green);
+        @include chapter-color($color: white);
+        h1::before { @include logo-neg(); }
+    }
+
+    &.chapter.light-green {
+        @include backdrop($color: $sintef-light-green);
+        @include chapter-color($color: $sintef-blue);
+    }
+
+    &.chapter.red {
+        @include backdrop($color: $sintef-red);
+        @include chapter-color($color: white);
+        h1::before { @include logo-neg(); }
+    }
+
+    &.chapter.yellow {
+        @include backdrop($color: $sintef-yellow);
+        @include chapter-color($color: white);
+        h1::before { @include logo-neg(); }
+    }
+
+    &.chapter.purple {
+        @include backdrop($color: $sintef-purple);
+        @include chapter-color($color: white);
+        h1::before { @include logo-neg(); }
+    }
+
+    h1 {
+        font-family: calibri-bold;
+        position: absolute;
+        top: 0px;
+        display: flex;
+        align-items: flex-end;
+
+        &::before {
+            @include logo-pos();
+            content: "";
+            width: $logo-size;
+            height: $logo-size;
+            display: inline-block;
+            margin-right: 40px;
+        }
+    }
+
+    &:not(.title, .chapter) {
+        padding-top: 200px;
+        h1 {
+            line-height: 20px;
+            // padding-top: $slide-title-gap-base;
+            // position: relative;
+            // top: 50px;
+            top: -$slide-title-offset;
+
+            &::before {
+                position: relative;
+                top: $slide-title-offset;
+            }
+        }
+    }
+
+    code {
+        font-family: iosevka-semibold;
+    }
+}

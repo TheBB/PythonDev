@@ -1,0 +1,167 @@
+/* @theme sintef */
+@import-theme "default";
+@font-face {
+  font-family: calibri-bold;
+  src: url("theme/calibri-bold.ttf");
+}
+@font-face {
+  font-family: calibri-regular;
+  src: url("theme/calibri-regular.ttf");
+}
+@font-face {
+  font-family: iosevka-semibold;
+  src: url("theme/iosevka-ss09-extendedsemibold.ttf");
+}
+section {
+  justify-content: start;
+  color: #003a62;
+}
+section.title, section.chapter {
+  padding-top: 520px;
+  color: black;
+}
+section.title h1, section.chapter h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 450px;
+  color: #003a62;
+}
+section.title h2, section.chapter h2 {
+  position: absolute;
+  top: 430px;
+  font-family: calibri-regular;
+  font-weight: 100;
+  font-size: 37px;
+  color: #003a62;
+}
+section.title {
+  background: linear-gradient(110deg, white 49.95%, transparent 50.05%), url("theme/background.jpg");
+}
+section.chapter.blue {
+  background: linear-gradient(110deg, #003a62 49.95%, transparent 50.05%), url("theme/background.jpg");
+  color: white;
+}
+section.chapter.blue h1 {
+  color: white;
+}
+section.chapter.blue h2 {
+  color: white;
+}
+section.chapter.blue h1::before {
+  background: url("theme/sintef-logo-negative.svg") top left no-repeat;
+  background-size: 140px 140px;
+}
+section.chapter.dark-green {
+  background: linear-gradient(110deg, #004427 49.95%, transparent 50.05%), url("theme/background.jpg");
+  color: white;
+}
+section.chapter.dark-green h1 {
+  color: white;
+}
+section.chapter.dark-green h2 {
+  color: white;
+}
+section.chapter.dark-green h1::before {
+  background: url("theme/sintef-logo-negative.svg") top left no-repeat;
+  background-size: 140px 140px;
+}
+section.chapter.green {
+  background: linear-gradient(110deg, #13b374 49.95%, transparent 50.05%), url("theme/background.jpg");
+  color: white;
+}
+section.chapter.green h1 {
+  color: white;
+}
+section.chapter.green h2 {
+  color: white;
+}
+section.chapter.green h1::before {
+  background: url("theme/sintef-logo-negative.svg") top left no-repeat;
+  background-size: 140px 140px;
+}
+section.chapter.light-green {
+  background: linear-gradient(110deg, #c7f2da 49.95%, transparent 50.05%), url("theme/background.jpg");
+  color: #003a62;
+}
+section.chapter.light-green h1 {
+  color: #003a62;
+}
+section.chapter.light-green h2 {
+  color: #003a62;
+}
+section.chapter.red {
+  background: linear-gradient(110deg, #b83a35 49.95%, transparent 50.05%), url("theme/background.jpg");
+  color: white;
+}
+section.chapter.red h1 {
+  color: white;
+}
+section.chapter.red h2 {
+  color: white;
+}
+section.chapter.red h1::before {
+  background: url("theme/sintef-logo-negative.svg") top left no-repeat;
+  background-size: 140px 140px;
+}
+section.chapter.yellow {
+  background: linear-gradient(110deg, #c29613 49.95%, transparent 50.05%), url("theme/background.jpg");
+  color: white;
+}
+section.chapter.yellow h1 {
+  color: white;
+}
+section.chapter.yellow h2 {
+  color: white;
+}
+section.chapter.yellow h1::before {
+  background: url("theme/sintef-logo-negative.svg") top left no-repeat;
+  background-size: 140px 140px;
+}
+section.chapter.purple {
+  background: linear-gradient(110deg, #74004d 49.95%, transparent 50.05%), url("theme/background.jpg");
+  color: white;
+}
+section.chapter.purple h1 {
+  color: white;
+}
+section.chapter.purple h2 {
+  color: white;
+}
+section.chapter.purple h1::before {
+  background: url("theme/sintef-logo-negative.svg") top left no-repeat;
+  background-size: 140px 140px;
+}
+section h1 {
+  font-family: calibri-bold;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  align-items: flex-end;
+}
+section h1::before {
+  background: url("theme/sintef-logo-positive.svg") top left no-repeat;
+  background-size: 140px 140px;
+  content: "";
+  width: 140px;
+  height: 140px;
+  display: inline-block;
+  margin-right: 40px;
+}
+section:not(.title, .chapter) {
+  padding-top: 200px;
+}
+section:not(.title, .chapter) h1 {
+  line-height: 20px;
+  top: -20px;
+}
+section:not(.title, .chapter) h1::before {
+  position: relative;
+  top: 20px;
+}
+section code {
+  font-family: iosevka-semibold;
+}
+
+/*# sourceMappingURL=sintef.css.map */
